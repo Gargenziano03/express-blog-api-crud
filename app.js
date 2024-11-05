@@ -14,7 +14,7 @@ app.get('/posts', (req, res) => {
 });
 
 app.get('/posts/:title', (req, res) => {
-    const post = posts.find((post) => post.title.toLowerCase === req.params.title) 
+    const post = posts.find((post) => post.title.toLowerCase() === req.params.title) 
     if (!post) {
         return res.status(404).json({ error: 'no post found with tha title'})
     }
