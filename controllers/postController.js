@@ -2,7 +2,7 @@ const posts = require('../db/posts.js')
 
 const index = (req, res) => {
     res.json({ data: posts, count: posts.length})
-}
+};
 
 const show = (req, res) => {
     const post = posts.find((post) => post.title.toLowerCase() === req.params.title) 
@@ -12,7 +12,15 @@ const show = (req, res) => {
     return res.status(200).json({ data: post})
 };
 
+const store = (req, res) => {
+    console.log(req.body);
+    res.json({
+        body: req.body
+    })
+}
+
 module.exports = {
     index,
-    show
+    show,
+    store
 }

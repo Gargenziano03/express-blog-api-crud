@@ -6,6 +6,6 @@ router.get('/', postController.index);
 
 router.get('/:title', postController.show);
 
-router.post('/posts', postController.store)
+router.post('/', postController.store)
 
 module.exports = router
