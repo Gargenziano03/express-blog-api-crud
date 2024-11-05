@@ -13,9 +13,21 @@ const show = (req, res) => {
 };
 
 const store = (req, res) => {
+    const post = {
+        title: req.body.title,
+          slug: req.body.slug,
+      content: req.body.content,
+      image: req.body.image,
+      tags: [req.body.tags],
+    }
+    posts.push(post)
+
     console.log(req.body);
-    res.json({
-        body: req.body
+
+    return res.status(201).json({
+        status: 201,
+        data: posts,
+        count: posts.length
     })
 }
 
