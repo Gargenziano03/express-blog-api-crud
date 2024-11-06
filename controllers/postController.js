@@ -34,8 +34,22 @@ const store = (req, res) => {
     })
 }
 
+const update = (req, res) => {
+    const post = posts.find((post) => post.title.toLowerCase() === req.params.title)
+    if(!post){
+        return res.status(404).json({error: 'no post found with tha title'})
+    }
+
+    post.title = req.body.title
+    post.slug = req.body.slug 
+    post.content = req.body.content 
+    post.image = req.body.imge
+    post.tags = [req.body.tags, req.body.tags]
+}
+
 module.exports = {
     index,
     show,
-    store
+    store,
+    update 
 }
