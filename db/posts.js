@@ -1,4 +1,4 @@
-module.exports =[
+module.exports = [
     {
         "title": "Ciambellone",
         "slug": "ciambellone",
@@ -58,16 +58,25 @@ module.exports =[
         ]
     },
     {
-        "title": "Cracker alla barba",
+        "title": "Cracker vegetale",
         "slug": "cracker-alla-barba",
-        "image": "cracker_barbabietola.jpeg",
         "tags": [
             [
-                "Antipasti",
-                "Ricette vegetariane",
-                "Ricette al forno"
+                [
+                    "Antipasti",
+                    "Ricette vegetariane",
+                    "Ricette al forno"
+                ]
+            ],
+            [
+                [
+                    "Antipasti",
+                    "Ricette vegetariane",
+                    "Ricette al forno"
+                ]
             ]
-        ]
+        ],
+        "content": "cracker è un dolce vegetale "
     },
     {
         "title": "Cracker alla barba",

@@ -44,7 +44,14 @@ const update = (req, res) => {
     post.slug = req.body.slug 
     post.content = req.body.content 
     post.image = req.body.imge
-    post.tags = [req.body.tags, req.body.tags]
+    post.tags = [req.body.tags]
+
+    fs.writeFileSync('./db/posts.js', `module.exports = ${JSON.stringify(posts, null, 4)}`)
+
+    res.status(200).json({
+        status: 200,
+        data: posts
+    })
 }
 
 module.exports = {
