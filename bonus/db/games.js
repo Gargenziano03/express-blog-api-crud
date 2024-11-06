@@ -71,4 +71,4 @@ const games = [
     }
 ];
 
-module.exports = games
+module.exports = games;
