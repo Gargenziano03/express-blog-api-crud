@@ -53,10 +53,14 @@ const update = (req, res) => {
         data: posts
     })
 }
+ const destroy = (req, res) => {
+
+ }
 
 module.exports = {
     index,
     show,
     store,
-    update 
+    update,
+    destroy
 }
