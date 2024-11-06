@@ -37,7 +37,7 @@ const store = (req, res) => {
 const update = (req, res) => {
     const post = posts.find((post) => post.title.toLowerCase() === req.params.title)
     if(!post){
-        return res.status(404).json({error: 'no post found with tha title'})
+        return res.status(404).json({error: `no post found with this ${req.params.title}`})
     }
 
     post.title = req.body.title
@@ -54,6 +54,19 @@ const update = (req, res) => {
     })
 }
  const destroy = (req, res) => {
+    const post = posts.find((post) => post.title.toLowerCase() === req.params.title)
+    if(!post){
+        return res.status(404).json({error: `no post found with this ${req.params.title}`})
+    }
+
+    const newPosts = posts.filter(post => post.title.toLowerCase() !== req.params.title)
+
+    fs.writeFileSync('./db/db.js', `module.exports = ${JSON.stringify(newPosts, null, 4)}`)
+
+    res.status(200).json({
+        status: 200,
+        data: newPosts
+    })
 
  }
 
