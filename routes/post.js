@@ -8,4 +8,6 @@ router.get('/:title', postController.show);
 
 router.post('/', postController.store)
 
+router.put("/:title", postController.update)
+
 module.exports = router
